@@ -757,7 +757,7 @@ DotPlot.prototype.drawGrid = function() {
 	if (showQueryGrid === "always") {
 		displayGridQuery = "block";
 	}
-	else if (showQueryGrid === "never") {
+	else if (showQueryGrid === "always") {
 		displayGridQuery = "none";
 	}
 
@@ -1077,8 +1077,8 @@ DotPlot.prototype.style_schema = function() {
 		{name: "y-axis title", type: "string", default: "query"},
 
 		{name: "Alignments", type: "section"},
-		{name: "show repetitive alignments", type: "bool", default: true},
-		{name: "minimum alignment length", type: "number", default: 0},
+		{name: "show repetitive alignments", type: "bool", default: false},
+		{name: "minimum alignment length", type: "number", default: 1000},
 		{name: "alignment symbol", type: "selection", default:"dotted ends", options: ["line","dotted ends"]},
 		{name: "alignment line thickness", type: "number", default: 2},
 		{name: "color of unique forward alignments", type: "color", default: "#0081b0"},
@@ -1092,7 +1092,7 @@ DotPlot.prototype.style_schema = function() {
 
 		{name: "Grid lines", type: "section"},
 		{name: "show grid lines (reference)", type: "selection", default: "always", options: ["always", "zoom", "never"]},
-		{name: "show grid lines (query)", type: "selection", default: "never", options: ["always", "zoom", "never"]},
+		{name: "show grid lines (query)", type: "selection", default: "always", options: ["always", "zoom", "never"]},
 		{name: "show basepair coordinates markers for reference", type: "bool", default: true},
 		{name: "show basepair coordinates markers for query", type: "bool", default: true},
 		{name: "font size (basepair coordinates)", type: "number", default: 10},
